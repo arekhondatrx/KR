@@ -8,7 +8,6 @@
 #include "DataMenager.h"
 
 DataMenager::DataMenager() {
-	// TODO Auto-generated constructor stub
 	temp = 0;
 	data_counter = 0;
 	sum_counter = 0;
@@ -18,8 +17,8 @@ DataMenager::DataMenager() {
 }
 
 DataMenager::~DataMenager() {
-	// TODO Auto-generated destructor stub
 	delete [] data;
+	delete [] sum;
 }
 
 void DataMenager::initialize(){
@@ -59,16 +58,9 @@ bool DataMenager::dataRecive(){
 			}
 			while(temp != TERMINATOR);
 
-			//Serial.flush();
 			return checkSum(data,data_counter,charToInt(sum,sum_counter));
 		}
 	}
-	/*if(temp == TERMINATOR)
-	{
-		Serial.println("checksum");
-		return checkSum(data,data_counter,charToInt(sum,sum_counter));
-	}
-	else return false;*/
 	return false;
 }
 

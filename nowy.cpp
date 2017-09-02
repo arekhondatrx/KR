@@ -44,7 +44,6 @@ void setup()
 	solver.solvInitialize();
 	conection.initialize();
 
-
 	tab_moves = new char [MAX_SIZE_TAB_MOVES];
 	index = new uint8_t;
 	*index = 0;
@@ -52,7 +51,6 @@ void setup()
 	end_data = 0;
 	get_color_step = 0;
 }
-bool serial = false;
 
 void loop()
 {
@@ -111,7 +109,6 @@ void loop()
 			conection.copyArray(conection.getData(),tab_moves,conection.getDataCounter(),index);
 			conection.dataSend(String(*index));
 			conection.dataSend("OK");
-			//Serial.flush();
 		}
 
 	}
@@ -126,7 +123,6 @@ void loop()
 		if((*index) != move_counter)//tab_moves[move_counter] != END_DATA
 		{
 			solver.solver(tab_moves[move_counter], tab_moves[move_counter + 1]);
-			//conection.dataSend(String(tab_moves[move_counter]));
 
 			if(tab_moves[move_counter] == tab_moves[move_counter + 1])
 			{
@@ -144,7 +140,6 @@ void loop()
 			}
 		}
 		doneMoves = "%" + String(calculateDoneMovePercentage((*index),move_counter));
-		//doneMoves = "M" + String(move_counter);
 		conection.dataSend(doneMoves);
 
 		if((*index) == move_counter)

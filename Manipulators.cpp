@@ -278,7 +278,7 @@ bool Manipulators::getColorStep1()
 		  this->moto[2]->move(false) == false);
 	this->moto[0]->resetStepCounter();
 	this->moto[2]->resetStepCounter();
-	//Serial.println("Step 1");
+
 	return true;
 }
 
@@ -293,7 +293,7 @@ bool Manipulators::getColorStep2()
 		  this->moto[2]->move(true) == false);
 	this->moto[0]->resetStepCounter();
 	this->moto[2]->resetStepCounter();
-	//Serial.println("Step 2");
+
 	return true;
 }
 
@@ -317,7 +317,6 @@ bool Manipulators::getColorStep3()
 	this->moto[1]->resetStepCounter();
 	this->moto[3]->resetStepCounter();
 
-	//Serial.println("Step 3");
 	return true;
 }
 
@@ -333,7 +332,6 @@ bool Manipulators::getColorStep4()
 	this->moto[1]->resetStepCounter();
 	this->moto[3]->resetStepCounter();
 
-	//Serial.println("Step 4");
 	return true;
 }
 
@@ -357,7 +355,6 @@ bool Manipulators::getColorStep5()
 	this->moto[0]->resetStepCounter();
 	this->moto[2]->resetStepCounter();
 
-	//Serial.println("Step 5");
 	return true;
 }
 
@@ -373,7 +370,6 @@ bool Manipulators::getColorStep6()
 	this->moto[0]->resetStepCounter();
 	this->moto[2]->resetStepCounter();
 
-	//Serial.println("Step 6");
 	return true;
 }
 
@@ -427,6 +423,5 @@ bool Manipulators::getColorStep7()
 	servo[2].write(SERVO_CLOSE + adjustment[2]);
 	delay(SERVO_DELAY);
 
-	//Serial.println("Step 7");
 	return true;
 }
