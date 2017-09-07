@@ -153,7 +153,7 @@ void Manipulators::moveZ(bool direction)
 	servo[2].write(SERVO_CLOSE + adjustment[2]);
 	delay(SERVO_DELAY);
 
-	xTableChanger(direction);
+	zTableChanger(direction);//x
 }
 
 void Manipulators::moveY(bool direction)
@@ -191,7 +191,7 @@ void Manipulators::moveX(bool direction)
 	servo[3].write(SERVO_CLOSE + adjustment[3]);
 	delay(SERVO_DELAY);
 
-	zTableChanger(direction);
+	xTableChanger(direction);//z
 }
 
 

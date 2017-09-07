@@ -54,6 +54,12 @@ void Solv::solver(char command, char next_command)
 	case 'y':
 		this->mani->moveY(true);
 		break;
+	case 'Z':
+		this->mani->moveZ(false);
+		break;
+	case 'z':
+		this->mani->moveZ(true);
+		break;
 	default:
 		this->checkManipulator(command, equalCommand(command,next_command));
 		break;
